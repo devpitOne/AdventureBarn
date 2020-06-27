@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureBarn.WorkSite", "AdventureBarn.WorkSite\AdventureBarn.WorkSite.csproj", "{E949FE7A-94B1-44AF-8DEB-BD5340CEF505}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureBarn.Entities", "AdventureBarn.Entities\AdventureBarn.Entities.csproj", "{58BC8738-3A8A-45F1-9132-F7A35B6BA79F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E949FE7A-94B1-44AF-8DEB-BD5340CEF505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E949FE7A-94B1-44AF-8DEB-BD5340CEF505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E949FE7A-94B1-44AF-8DEB-BD5340CEF505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E949FE7A-94B1-44AF-8DEB-BD5340CEF505}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58BC8738-3A8A-45F1-9132-F7A35B6BA79F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58BC8738-3A8A-45F1-9132-F7A35B6BA79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58BC8738-3A8A-45F1-9132-F7A35B6BA79F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58BC8738-3A8A-45F1-9132-F7A35B6BA79F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E0E224E-E6B5-407C-9D13-E52E55E15933}
+	EndGlobalSection
+EndGlobal
