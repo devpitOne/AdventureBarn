@@ -41,7 +41,7 @@ namespace AdventureBarn.WorkSite.Controllers
         public ActionResult Edit([Bind(Include = "Id,Name,BusinessAddress,BusinessAddressId")] Supplier supplier)
         {
             var controller = DependencyResolver.Current.GetService<AddressController>();
-            controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
+            controller.ControllerContext = new ControllerContext(Request.RequestContext, controller);
             controller.Edit(supplier.BusinessAddress);
             return UnboundEdit(supplier);
         }
