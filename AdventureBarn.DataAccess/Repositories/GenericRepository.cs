@@ -2,10 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core.Metadata.Edm;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 
 namespace AdventureBarn.DataAccess.Repositories
 {
@@ -67,11 +67,31 @@ namespace AdventureBarn.DataAccess.Repositories
             _context.SaveChanges();
         }
 
+        /// <summary>
+        /// The update method uses a very simple form of handling for related entities
+        /// A more full response would involve an external framework for graph walking
+        /// </summary>
+        /// <param name="obj"></param>
         public void Update(T obj)
         {
             _table.Attach(obj);
             _context.Entry(obj).State = EntityState.Modified;
             Save();
         }
+
+        #region Private Methods
+        private bool Exists(string entityName)
+        {
+            ObjectContext objContext = ((IObjectContextAdapter)_context).ObjectContext;
+            MetadataWorkspace workspace = objContext.MetadataWorkspace;
+            return workspace.GetItems<EntityType>(DataSpace.CSpace).Any(e => e.Name == entityName);
+        }
+
+        private void Attach<RelatedEntity>(RelatedEntity relatedEntity) where RelatedEntity : class
+        {
+            _context.Set<RelatedEntity>().Attach(relatedEntity);
+        } 
+
+        #endregion
     }
 }

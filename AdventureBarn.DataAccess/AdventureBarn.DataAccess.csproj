@@ -89,7 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="AdventureBarnContext.cs" />
     <Compile Include="AdventureBarnIntializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
