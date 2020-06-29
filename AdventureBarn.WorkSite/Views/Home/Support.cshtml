@@ -1,17 +1,44 @@
-﻿@{
-    ViewBag.Title = "Support";
+﻿@model AdventureBarn.WorkSite.Models.ContactUs
+@{
+	ViewBag.Title = "Support";
 }
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<fieldset>
+		<div class="form-group">
+			<label class="name">
+				@Html.EditorFor(m => m.Name, new { htmlAttributes = new { @placeholder = "Name *", @type = "text" } })
+			</label>
+		</div>
+		<div class="form-group">
+			<label class="email">
+				@Html.TextBoxFor(m => m.Email, new { @placeholder = "Email Address *", @type = "email" })
+			</label>
+		</div>
+		<div class="form-group">
+			<label class="phone notRequired">
+				@Html.TextBoxFor(m => m.Telephone, new { @placeholder = "Telephone Number", @type = "text" })
+			</label>
+		</div>
+		<div class="form-group">
+			<label class="message">
+				@Html.TextAreaFor(m => m.Message, new { @placeholder = "Message *" })
+			</label>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" value="Submit" class="btn btn-default" />
+				<input type="reset" value="Reset" name="MFReset" class="btn btn-default"><span> * Required Fields</span>
+			</div>
+		</div>
+	</fieldset>
+}
 
 <address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+	Or email <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
 </address>
