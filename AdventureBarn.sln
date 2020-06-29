@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureBarn.Contracts", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureBarn.DataAccess", "AdventureBarn.DataAccess\AdventureBarn.DataAccess.csproj", "{DBBE9769-D61F-41BA-B99D-21E0076898A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureBarn.Tests", "AdventureBarn.Tests\AdventureBarn.Tests.csproj", "{F9917A6D-C743-4BEB-9E4B-B28667447EE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DBBE9769-D61F-41BA-B99D-21E0076898A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBBE9769-D61F-41BA-B99D-21E0076898A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBBE9769-D61F-41BA-B99D-21E0076898A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9917A6D-C743-4BEB-9E4B-B28667447EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9917A6D-C743-4BEB-9E4B-B28667447EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9917A6D-C743-4BEB-9E4B-B28667447EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9917A6D-C743-4BEB-9E4B-B28667447EE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
