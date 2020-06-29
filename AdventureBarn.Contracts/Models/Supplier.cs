@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,11 @@ namespace AdventureBarn.Contracts.Models
 
         public string Name { get; set; }
 
-        public Address BusinessAddress { get; set; }
+        public long BusinessAddressId { get; set; }
+
+        [DisplayName("Business Address")]
+        public virtual Address BusinessAddress { get; set; }
+
+        public virtual IEnumerable<Product> Products { get; set; }
     }
 }

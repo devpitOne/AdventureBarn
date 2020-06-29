@@ -13,9 +13,9 @@ namespace AdventureBarn.Contracts.Models
     {
         public long Id { get; set; }
 
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
-        public IEnumerable<Shelf> Locations { get; set; }
+        public virtual IEnumerable<Shelf> Locations { get; set; }
 
         public long Quantity { get; set; }
     }

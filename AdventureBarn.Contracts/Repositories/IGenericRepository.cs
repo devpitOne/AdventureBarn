@@ -1,5 +1,4 @@
-﻿using AdventureBarn.Contracts.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace AdventureBarn.Contracts.Repositories

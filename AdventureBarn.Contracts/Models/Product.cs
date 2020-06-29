@@ -11,12 +11,16 @@ namespace AdventureBarn.Contracts.Models
     /// </summary>
     public class Product
     {
+        #region Properties
         public long Id { get; set; }
 
         public string Name { get; set; }
 
         public bool Available { get; set; }
 
-        public Supplier Supplier { get; set; }
+        public long SupplierId { get; set; }
+
+        public virtual Supplier Supplier { get; set; }
+        #endregion
     }
 }
