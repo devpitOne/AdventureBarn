@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#StockGraph {
+    border: 1px dotted #000000;
+    display: flex;
+}
