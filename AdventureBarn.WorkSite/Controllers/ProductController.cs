@@ -20,6 +20,9 @@ namespace AdventureBarn.WorkSite.Controllers
         // An override of the default create to allow us to change default available property value.
         public override ActionResult Create()
         {
+            var controller = DependencyResolver.Current.GetService<SupplierController>();
+            controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
+            ViewBag.Suppliers = controller.GetSupplierList();
             var newProduct = new Product { Available = true };
             return View(newProduct);
         }
@@ -29,9 +32,26 @@ namespace AdventureBarn.WorkSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Available")] Product product)
+        public ActionResult Create([Bind(Include = "Id,Name,Available,SupplierId")] Product product)
         {
             return UnboundCreate(product);
+        }
+
+        public override ActionResult Edit(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var foundObject = _repository.GetByID(id.Value);
+            if (foundObject == null)
+            {
+                return HttpNotFound();
+            }
+            var controller = DependencyResolver.Current.GetService<SupplierController>();
+            controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
+            ViewBag.Suppliers = controller.GetSupplierList();
+            return View(foundObject);
         }
 
         // POST: Product/Edit/5

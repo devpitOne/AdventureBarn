@@ -13,17 +13,9 @@ namespace AdventureBarn.WorkSite.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Support()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.Message = "Support Page.";
             return View();
         }
     }

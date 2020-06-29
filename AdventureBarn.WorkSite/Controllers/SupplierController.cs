@@ -17,12 +17,18 @@ namespace AdventureBarn.WorkSite.Controllers
         {
         }
 
+        public override ActionResult Create()
+        {
+            var newSupplier = new Supplier { BusinessAddress = new Address() };
+            return View(newSupplier);
+        }
+
         // POST: Supplier/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] Supplier supplier)
+        public ActionResult Create([Bind(Include = "Id,Name,BusinessAddress")] Supplier supplier)
         {
             return UnboundCreate(supplier);
         }
@@ -32,10 +38,17 @@ namespace AdventureBarn.WorkSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] Supplier supplier)
+        public ActionResult Edit([Bind(Include = "Id,Name,BusinessAddress,BusinessAddressId")] Supplier supplier)
         {
+            var controller = DependencyResolver.Current.GetService<AddressController>();
+            controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
+            controller.Edit(supplier.BusinessAddress);
             return UnboundEdit(supplier);
         }
 
+        public List<Supplier> GetSupplierList()
+        {
+            return _repository.GetAll().ToList();
+        }
     }
 }
