@@ -21,18 +21,6 @@ namespace AdventureBarn.DataAccess.Repositories
             _table = _context.Set<T>();
         }
 
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!_disposed)
-            {
-                if (disposing)
-                {
-                    _context.Dispose();
-                }
-            }
-            _disposed = true;
-        }
-
         public void Dispose()
         {
             Dispose(true);
@@ -79,18 +67,18 @@ namespace AdventureBarn.DataAccess.Repositories
             Save();
         }
 
-        #region Private Methods
-        private bool Exists(string entityName)
+        #region Protected Methods
+        protected virtual void Dispose(bool disposing)
         {
-            ObjectContext objContext = ((IObjectContextAdapter)_context).ObjectContext;
-            MetadataWorkspace workspace = objContext.MetadataWorkspace;
-            return workspace.GetItems<EntityType>(DataSpace.CSpace).Any(e => e.Name == entityName);
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            _disposed = true;
         }
-
-        private void Attach<RelatedEntity>(RelatedEntity relatedEntity) where RelatedEntity : class
-        {
-            _context.Set<RelatedEntity>().Attach(relatedEntity);
-        } 
 
         #endregion
     }
