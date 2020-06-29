@@ -17,6 +17,13 @@ namespace AdventureBarn.WorkSite.Controllers
         {
         }
 
+        // An override of the default create to allow us to change default available property value.
+        public override ActionResult Create()
+        {
+            var newProduct = new Product { Available = true };
+            return View(newProduct);
+        }
+
         // POST: Product/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
