@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace AdventureBarn.Contracts.Models
 {
@@ -14,7 +10,7 @@ namespace AdventureBarn.Contracts.Models
     {
         public long Id { get; set; }
 
-        [DisplayName("Address Line 1")]
+        [DisplayName("Address Line 1"), Required]
         public string AddressLine1 { get; set; }
 
         [DisplayName("Address Line 2")]
@@ -26,6 +22,7 @@ namespace AdventureBarn.Contracts.Models
         [DisplayName("Address Line 4")]
         public string AddressLine4 { get; set; }
 
+        [Required]
         public string Country { get; set; }
 
         public string Postcode { get; set; }
