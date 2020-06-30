@@ -24,3 +24,9 @@ The application functions in the following tiers:
 -Presentation is handled through a traditional MVC View layer with multiple views allowing granular control of screens 
 -Logic is handled in the traditional MVC Controller pattern
 -Business Objects exist in Contracts available across multiple projects, though the MVC layer also has its own local models.
+
+#To Do List
+-Shelves and Stocks are unfinished and commented out. When complete they would provide the physical locations and inventories of products
+-Stock Graph, at the moment the stocks graph is only a stub. It would be wired up to a specific database query to provide at a glance info on stocks in the warehouse
+-Integrations. AdventureBarn would ideally integrate with a scanner system to track products entering/leaving
+--File Inputs. AdventureBarn could use a subsystem separate to the WorkSite that uses the Contracts and DataAccess to load files of suppliers & products into the database
